@@ -1,15 +1,19 @@
-<!-- Héritage de template ? Block(s) ? --> <section>
+<!-- Héritage de template ? Block(s) ? --> 
+{% extends "base.html" %}
 
-    {% extends "index.html" %}
-
+{% block main %}
     {% block content %}
-    <h2>The world of Jurassic Park</h2>
-    <!-- iterate here ? -->
-        <a href="">
-            <figure>
-                <img src="" alt="" />
-                <figcaption>Discover the Brachiosaurus</figcaption>
-            </figure>
-        </a>
-</section>
+        <section>      
+            <h2>The world of Jurassic Park</h2>
+            <!-- iterate here ? -->
+            {% for dino in d %}
+                <a href="">
+                    <figure>
+                        <img src="{{dino["avatar"]}}" alt="" />
+                        <figcaption>Discover the {{dino["name"]}}</figcaption>
+                    </figure>
+                </a>
+            {% endfor %}
+        </section>
+    {% endblock %}
 {% endblock %}
