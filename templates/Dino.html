@@ -30,13 +30,16 @@
     </article>
     <aside>
         <h3>Top rated dinosaurs</h3>
-        <!-- iterate here ? -->
-            <a href="">
+        {% for dino in topRated %}
+
+        <a href="{{ url_for('detailDino', slug=dino["name"]) }}">
                 <figure>
-                    <img src="" alt="" />
-                    <figcaption>Discover the Brachiosaurus</figcaption>
+                    <img src="{{dino["avatar"]}}" alt="" />
+                    <figcaption>Discover the {{dino["name"]}}</figcaption>
                 </figure>
-            </a>
+        </a>
+            
+        {% endfor %}
     </aside>
 </div>
 

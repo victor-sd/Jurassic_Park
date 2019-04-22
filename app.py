@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+from random import sample 
 import json
 
 from jp.dino import dinosaurs,detailDinosaur
@@ -15,5 +16,8 @@ def index():
 @app.route('/dinosaur/<slug>')
 def detailDino(slug = None):
     detail = detailDinosaur(slug)
-    return render_template('Dino.html',slug=slug,detail=json.loads(detail.text))
+    d = dinosaurs()
+    d=json.loads(d.text)
+    topRated = sample(d, 3)
+    return render_template('Dino.html',slug=slug,detail=json.loads(detail.text),topRated = topRated)
 
