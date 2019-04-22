@@ -7,7 +7,7 @@
             <h2>The world of Jurassic Park</h2>
             <!-- iterate here ? -->
             {% for dino in d %}
-                <a href="">
+                <a href="{{ url_for('detailDino', slug=dino["name"]) }}">
                     <figure>
                         <img src="{{dino["avatar"]}}" alt="" />
                         <figcaption>Discover the {{dino["name"]}}</figcaption>

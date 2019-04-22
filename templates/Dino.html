@@ -1,24 +1,30 @@
-<!-- Héritage de template ? Block(s) ? --> <div class="grid">
+<!-- Héritage de template ? Block(s) ? --> 
+{% extends "base.html" %}
+
+{% block main %}
+    {% block content %}
+<div class="grid">
     <article>
-        <h2>Discover the Brachiosaurus</h2>
+        <h2>Discover the {{ slug }}</h2>
         <div class="description">
-            Lorem ispum
+            {{detail["description"]}}
         </div>
         <div class="card">
-            <img src="" alt="" />
+            <img src="{{detail["avatar"]}}" alt="" />
             <dl>
                 <dt>Name</dt>
-                <dd>Brachiosaurus</dd>
+                <!--<dd>Brachiosaurus</dd>-->
+                <dd>{{detail["name"]}}</dd>
                 <dt>Name meaning</dt>
-                <dd>Brachiosaurus</dd>
+                <dd>{{detail["name_meaning"]}}</dd>
                 <dt>Diet</dt>
-                <dd>Brachiosaurus</dd>
+                <dd>{{detail["diet"]}}</dd>
                 <dt>Height</dt>
-                <dd>Brachiosaurus m.</dd>
+                <dd>{{detail["height"]}} m.</dd>
                 <dt>Length</dt>
-                <dd>Brachiosaurus m.</dd>
+                <dd>{{detail["length"]}} m.</dd>
                 <dt>Weight</dt>
-                <dd>Brachiosaurus kg.</dd>
+                <dd>{{detail["weight"]}} kg.</dd>
             </dl>
         </div>
     </article>
@@ -33,3 +39,6 @@
             </a>
     </aside>
 </div>
+
+{% endblock %}
+{% endblock %}
