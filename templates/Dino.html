@@ -32,7 +32,7 @@
         <h3>Top rated dinosaurs</h3>
         {% for dino in topRated %}
 
-        <a href="{{ url_for('detailDino', slug=dino["name"]) }}">
+        <a href="{{ url_for('detailDino', slug=dino["slug"]) }}">
                 <figure>
                     <img src="{{dino["avatar"]}}" alt="" />
                     <figcaption>Discover the {{dino["name"]}}</figcaption>
